@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar'
+import Products from './components/Products'
+import Cart from './components/Cart'
+import { BrowserRouter, Route } from 'react-router-dom'
 
-function App() {
+const App = () => {
+  const [products] = useState([{
+    Product_id: 1,
+    Product_Name: "Tea",
+    Product_Category: "Beverages",
+    Product_Qty: 1,
+    Product_Price: 100
+  },
+  {
+    Product_id: 2,
+    Product_Name: "Oranges",
+    Product_Category: "Fruits",
+    Product_Qty: 3,
+    Product_Price: 87.5
+  }
+  ])
+
+  const [cartItems, setCartItems] = useState([]);
+
+  const addcartItems = (item) => {
+    if(cartItems.includes(item))
+      console.log("already in cart")
+      else{
+        console.log(`Adding ${item} to cart`)
+        setCartItems(cartItems.concat(item))
+      }
+    
+  }
+
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      
+      <Route exact path="/">
+      <Products products={products} addcartItems={addcartItems}/>
+      </Route>
+     
+
+      {/* <h2 className="center">Cart Items</h2>
+    { cartItems.map(product=><p key={product.Product_id}>Item: {product.Product_id}</p>
+    )
+  } */}
+
+      {/* <Cart items={cartItems} /> */}
+      <Route path="/cart">
+        <Cart items={cartItems}/>
+      </Route>
+      
     </div>
-  );
+    </BrowserRouter>)
 }
 
 export default App;

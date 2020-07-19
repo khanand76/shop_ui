@@ -1,7 +1,8 @@
 import React from 'react'
 
 
-const Product = ({ product,addItems }) => {
+
+const Product = ({ product,addItems}) => {
   console.log("inside Product")
 
   return (
@@ -14,6 +15,7 @@ const Product = ({ product,addItems }) => {
               <li>Category: {product.Product_Category}</li>
               <li>Price: {product.Product_Price}</li>
               <button onClick={()=>addItems(product)}>Add to Cart</button>
+              
             </ul>
           </div>
         </div>

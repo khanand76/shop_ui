@@ -1,0 +1,31 @@
+{
+    "products": [
+        {
+            "Product_id": 1,
+            "Product_Name": "Tea in JSON",
+            "Product_Category": "Beverages",
+            "Product_Qty": 1,
+            "Product_Price": 100
+          },
+          {
+            "Product_id": 2,
+            "Product_Name": "Oranges",
+            "Product_Category": "Fruits",
+            "Product_Qty": 3,
+            "Product_Price": 87.5
+          },
+          {
+            "Product_id": 3,
+            "Product_Name": "Table",
+            "Product_Category": "Furniture",
+            "Product_Qty": 1,
+            "Product_Price": 300
+          }, {
+            "Product_id": 4,
+            "Product_Name": "Pan",
+            "Product_Category": "Kitchenware",
+            "Product_Qty": 1,
+            "Product_Price": 20.5
+          }
+    ]
+}
